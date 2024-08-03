@@ -1,0 +1,62 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+  100% {
+    transform: scale(1) rotate(-45deg);
+  }
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../assets/bg-1.jpg') no-repeat center center/cover;
+}
+
+.heart {
+  margin: 60px;
+  background-color: red;
+  height: 160px;
+  transform: rotate(-45deg);
+  width: 160px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 1s infinite;
+}
+
+.heart p {
+  text-align: center;
+  position: absolute;
+  font-size: 32px;
+  font-weight: 600;
+  transform: rotate(45deg) translateY(-40px);
+  z-index: 100;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  background-color: red;
+  border-radius: 50%;
+  height: 160px;
+  position: absolute;
+  width: 160px;
+}
+
+.heart:before {
+  top: -80px;
+}
+
+.heart:after {
+  left: 80px;
+}
